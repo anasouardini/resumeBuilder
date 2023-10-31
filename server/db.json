@@ -1,0 +1,35 @@
+{
+  "templates": [
+    {
+      "default": {}
+    }
+  ],
+  "resumes": [
+    {
+      "title": "my standard resume template",
+      "components": [
+        {
+          "name": "full name",
+          "type": "text",
+          "order": 1,
+          "color": "#222",
+          "value": "anas ouardini"
+        },
+        {
+          "name": "phone",
+          "type": "text",
+          "order": 2,
+          "color": "#555",
+          "value": "06 xx xx xx xx"
+        },
+        {
+          "name": "age",
+          "type": "number",
+          "order": 3,
+          "color": "#555",
+          "value": 23
+        }
+      ]
+    }
+  ]
+}
