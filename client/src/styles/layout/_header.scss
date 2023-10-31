@@ -1,0 +1,13 @@
+@use "../abstracts/vars" as vars;
+
+.header {
+    display: flex;
+    padding: .5rem 20%;
+}
+
+.themeButton {
+    // TODO: animation
+    border: 1px solid vars.$accent;
+    color: vars.$accent;
+    margin-left: auto;
+}
