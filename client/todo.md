@@ -1,16 +1,17 @@
-## features
-- 
+## todo
+1. "resumes" page
+2. common components between "editor" and "template"
 
 ## stack
 - sass
-- redux [global state (theming)]
+- redux (theming)
     - todo: complexe implementation
 - custom hooks (reusable form)
-- react-query (sacrifice for custom hooks)
+- react-query (sacrifice for showcasing more custom hooks?)
 - react-formik (form, reusability, sanitization)
     - zod
 - react-router (resumes-list, editor, template)
-- json-server ()
+- json-server
 
 - tooltips (icons) (?)
     - lucide-react (icons)
