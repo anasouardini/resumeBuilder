@@ -2,10 +2,12 @@
 1. "resumes" page
 2. common components between "editor" and "template"
 
-## stack
+## target stack/features
 - sass
+    - grid
+    - animations
+    - responsiveness
 - redux (theming)
-    - todo: complexe implementation
 - custom hooks (reusable form)
 - react-query (sacrifice for showcasing more custom hooks?)
 - react-formik (form, reusability, sanitization)

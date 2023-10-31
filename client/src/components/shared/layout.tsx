@@ -1,14 +1,15 @@
-import './styles/index.scss';
 import React, { Children } from 'react'
-import Header from '@/components/shared/header';
+import Header from './header';
 
-interface LayoutProps {}
+interface LayoutProps {
+  children: React.ReactNode
+}
 
 const Layout = (props:LayoutProps) => {
   return (
     <>
-      <Header></Header>
-      {Children}
+      <Header/>
+      {props.children}
     </>
   )
 }
