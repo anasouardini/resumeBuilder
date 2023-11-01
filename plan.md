@@ -1,8 +1,3 @@
-## todo
-1. "resumes" page
-2. common components between "editor" and "template"
-3. switch from flexbox to grid
-
 ## target stack/features
 - [X] sass
     - [X] animations
