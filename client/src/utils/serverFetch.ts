@@ -104,16 +104,16 @@ const handleRequest = async (
 
     const response = await methods[method](route, body);
 
-        try {
-        } catch (err) {
-            toast.error(`client error while trying to make a request. route:${route}`)
-            return { err: 'connectionError', route };
-        }
+    try {
+    } catch (err) {
+        toast.error(`client error while trying to make a request. route:${route}`)
+        return { err: 'connectionError', route };
+    }
 
-        if (response.status != 200) {
-            toast.error(`${response}. route: ${route}`)
-            return { err: 'serverError' };
-        }
+    if (response.status < 200 || response.status > 299) {
+        toast.error(`${response}. route: ${route}`)
+        return { err: 'serverError' };
+    }
 
     return response;
 };

@@ -3,11 +3,31 @@ import { NavLink } from 'react-router-dom';
 import { Trash, Copy, Eye, Pen, Pencil } from 'lucide-react';
 import { Tooltip } from 'react-tooltip';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../state/store';
+import { actions } from '../state/resumes/resumes';
 
-interface ResumeProps {  }
+import { v4 as uuid } from 'uuid';
+
+interface ResumeProps { }
 const Resumes = () => {
+	const dispatch = useDispatch();
+	const deleteResume = (e, targetResumeID) => {
+		dispatch(actions.deleteResume(targetResumeID));
+	}
+	const updateResume = (e, targetResume) => {
+		let newResume = structuredClone(targetResume);
+		newResume.title = 'test title, was set by redux async thunk';
+		// console.log(newResume)
+		dispatch(actions.updateResume(newResume));
+	}
+	const cloneResume = (e, targetResume) => {
+		let newResume = structuredClone(targetResume);
+		newResume.id = uuid();
+		dispatch(actions.cloneResume(newResume));
+	}
+
+
 	const resumes = useSelector((state: RootState) => state.resumes);
 	//   console.log('resumes', resumes)
 	return (
@@ -16,7 +36,9 @@ const Resumes = () => {
 			<ul>
 				{
 					resumes.loaded
-						? resumes.data.map(({ title, id }) => {
+						? resumes.data.map((resume) => {
+							const { title, id } = resume;
+
 							return <li key={id}>
 								<h2>{title}</h2>
 								<div className='buttons'>
@@ -24,7 +46,7 @@ const Resumes = () => {
 										data-tooltip-id="edit"
 										data-tooltip-content="Edit"
 									>
-										<NavLink to={`/resumes/${id}`}><Pen /></NavLink>
+										<NavLink to={`/editor/${id}`}><Pen /></NavLink>
 									</button>
 									<Tooltip id='edit' />
 									<button
@@ -37,12 +59,18 @@ const Resumes = () => {
 									<button
 										data-tooltip-id="clone"
 										data-tooltip-content="Clone"
-									><Copy /></button>
+										onClick={(e) => cloneResume(e, resume)}
+									>
+										<Copy />
+									</button>
 									<Tooltip id='clone' />
 									<button
 										data-tooltip-id="delete"
 										data-tooltip-content="Delete"
-									><Trash /></button>
+										onClick={(e) => deleteResume(e, resume.id)}
+									>
+										<Trash />
+									</button>
 									<Tooltip id='delete' />
 								</div>
 							</li>
