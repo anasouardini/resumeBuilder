@@ -1,9 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit';
 import themeReducer from './userPreferences/userPreferences';
+import resumesReducer from './resumes/resumes';
 
 export const store = configureStore({
     reducer: {
-        theme: themeReducer
+        theme: themeReducer,
+        resumes: resumesReducer,
     }
 });
 

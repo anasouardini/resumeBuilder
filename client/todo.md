@@ -9,13 +9,13 @@
     - [X] responsiveness
 - [X] redux
     - [X] theming
-    - [ ] ?
+    - [X] store resumes data
 - [X] custom hooks
     - [X] get data from server
     - [ ] reusable form
 - [ ] react-formik (form, reusability, sanitization)
     - [ ] zod
-- [X] react-router (resumes-list, editor, template)
+- [X] react-router (resumes, editor, template)
 
 - [X] lucide-react (icons)
 - [X] tooltips (icons)
