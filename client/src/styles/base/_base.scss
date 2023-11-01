@@ -1,14 +1,13 @@
 :root {
-  --bg-color: #222;
+  --bg-color: #111;
+  --bg-color-2: #181818;
+  --bg-color-3: #1a1a1a;
   --text-color: #fff;
   --link-color: #007BFF;
   --link-color-hover: #747bff;
   --btn-bg-color: #3a3a3a;
   --btn-border-color-hover: #324275;
   --btn-outline-color-focus: #a9a1a1;
-  --bg-color-layer1: #f1f1f1;
-  --bg-color-layer2: #ddd;
-  --bg-color-layer3: #ccc;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -25,25 +24,25 @@
 
 body[data-theme="light"] {
   --bg-color: #fff;
+  --bg-color-2: #f9f9f9;
+  --bg-color-3: #eee;
   --text-color: #213547;
   --link-color: #007BFF;
   --link-color-hover: #747bff;
   --btn-bg-color: #f9f9f9;
   --btn-border-color-hover: #5872ca;
   --btn-outline-color-focus: #221f1f;
-  --bg-color-layer1: #f9f9f9;
-  --bg-color-layer2: #eee;
-  --bg-color-layer3: #ddd;
 }
 
-body{
+body {
   color: var(--text-color);
   background-color: var(--bg-color);
+  min-width: 350px;
 }
 
 a {
   font-weight: 500;
-  color: var(--link-color);
+  color: var(--text-color);
   text-decoration: inherit;
 }
 
@@ -80,8 +79,14 @@ button:hover {
 
 button:focus,
 button:focus-visible {
-  border-color: transparent;
+  border-color: transparent !important;
   outline: 2px solid var(--btn-outline-color-focus);
+}
+
+.container {
+  width: 80%;
+  margin-inline: auto;
+  padding-block: 2rem;
 }
 
 // @media (prefers-color-scheme: dark) {

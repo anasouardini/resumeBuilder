@@ -1,9 +1,11 @@
 import React from 'react'
 
 const Template = () => {
-  return (
-    <div>Template</div>
-  )
+    return (
+        <main className='container'>
+            <h1>Template</h1>
+        </main>
+    )
 }
 
 export default Template
