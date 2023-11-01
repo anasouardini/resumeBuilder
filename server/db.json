@@ -6,6 +6,34 @@
   ],
   "resumes": [
     {
+      "id": "88c80551-38c9-4e56-92f2-6b4f3b2e1a07",
+      "title": "my standard resume template",
+      "components": [
+        {
+          "name": "full name",
+          "type": "text",
+          "order": 1,
+          "color": "#222",
+          "value": "anas ouardini"
+        },
+        {
+          "name": "phone",
+          "type": "text",
+          "order": 2,
+          "color": "#555",
+          "value": "06 xx xx xx xx"
+        },
+        {
+          "name": "age",
+          "type": "number",
+          "order": 3,
+          "color": "#555",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "id": "73b7d501-8a03-42e7-9b81-27c0b73f81b5",
       "title": "my standard resume template",
       "components": [
         {
