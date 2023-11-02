@@ -138,6 +138,7 @@ const Editor = ({ }: EditorProps) => {
     if (outputResumeRef.current) {
       outputResumeRef.current.title = e.target.value;
     }
+    updateResume(outputResumeRef.current);
   }
 
   if (!resumes.loaded) {

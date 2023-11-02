@@ -7,14 +7,14 @@
   "resumes": [
     {
       "id": "f8a3ce60-c0d3-446c-b284-a49032c6ab05",
-      "title": "modifed manuall using the form",
+      "title": "modifed manually using the editor form",
       "components": [
         {
           "name": "full name",
           "type": "text",
           "order": 1,
           "color": "#fff",
-          "spacing": "1",
+          "spacing": "3",
           "value": "Name: linus torvald x"
         },
         {
@@ -44,7 +44,7 @@
           "type": "text",
           "order": 1,
           "color": "#fff",
-          "spacing": "1",
+          "spacing": "2",
           "value": "Name: anas ouardini"
         },
         {

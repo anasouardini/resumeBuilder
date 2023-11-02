@@ -7,8 +7,8 @@
     - [X] store resumes data
 - [X] custom hooks
     - [X] get data from server
-- [ ] react-formik (form, reusability, sanitization)
-    - [ ] zod
+- [X] react-formik (form, reusability, sanitization)
+    - [x] yup
 - [X] react-router (resumes, editor, template)
 
 - [X] lucide-react (icons)
