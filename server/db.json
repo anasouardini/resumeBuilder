@@ -51,7 +51,7 @@
           "name": "phone",
           "type": "text",
           "order": 2,
-          "color": "#555",
+          "color": "#bada55",
           "spacing": "1",
           "value": "Phone: 06 xx xx xx xx"
         },

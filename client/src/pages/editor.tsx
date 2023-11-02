@@ -37,6 +37,7 @@ const Editor = ({}: EditorProps) => {
       inputs: Input[]
       currentItemID: string
     }
+    smallScreen: boolean
   }
   const [state, setState] = React.useState<State>({
     form: {
@@ -88,6 +89,8 @@ const Editor = ({}: EditorProps) => {
       ],
       currentItemID: '',
     },
+
+    smallScreen: false,
   })
   const resumes = useSelector((state: RootState) => state.resumes)
   // console.log('preview', resumes)
@@ -101,6 +104,32 @@ const Editor = ({}: EditorProps) => {
   }, [resume])
 
   const formModalRef = React.useRef()
+
+  // set smallScreen flag on screen width below 700px
+  React.useEffect(() => {
+    const eventCB = () => {
+      let stateClone = state; // stale state copy to satisfy TS.
+      // getting real state; avoiding closure copy.
+      setState(state => {
+        stateClone = structuredClone(state)
+        return state
+      })
+      if (window.screen.width < 700 && !stateClone.smallScreen) {
+        console.log('small screen', window.screen.width)
+        stateClone.smallScreen = true
+        setState(stateClone)
+      } else if (window.screen.width >= 700 && stateClone.smallScreen) {
+        console.log('large screen', window.screen.width)
+        stateClone.smallScreen = false
+        setState(stateClone)
+      }
+    }
+
+    window.addEventListener('resize', eventCB)
+
+    // clean up
+    return () => removeEventListener('resize', eventCB)
+  }, [])
 
   const updateResume = newResume => {
     const newResumeClone = structuredClone({ ...resume, ...newResume })
@@ -156,11 +185,13 @@ const Editor = ({}: EditorProps) => {
     return <>Resume with the id ({resumeID}) couldn't be found!</>
   }
 
-  console.log(window.screen.width)
   return (
     <main className='container editor'>
-      <section aria-label='editing form'>
-        {window.screen.width < 700 ? (
+      <section
+        aria-label='editing form'
+        style={{ marginRight: state.smallScreen ? '' : '2rem' }}
+      >
+        {state.smallScreen ? (
           <>
             <button
               data-form-modal-show
