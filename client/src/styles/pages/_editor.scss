@@ -1,0 +1,72 @@
+@use '../abstracts//vars' as vars;
+
+main.editor {
+    display: flex;
+    justify-content: space-between;
+
+    section[aria-label="output"] {
+        flex-grow: 1;
+        margin-left: 2rem;
+
+        div {
+            padding: 1rem;
+            border: 1px solid var(--text-color-2);
+            border-radius: 6px;
+        }
+
+        h1 {
+            input {
+                border-color: transparent;
+                width: calc(100% - 2rem);
+                font-size: 1.2rem;
+                padding: .4rem 1rem;
+                margin-bottom: 1rem;
+                background-color: transparent;
+
+                &:hover{
+                    border-color: var(--text-color-2);
+                }
+            }
+        }
+    }
+}
+
+form {
+    label {
+        display: block;
+        text-transform: capitalize;
+        max-width: max-content;
+        margin-top: 1rem;
+
+        input {
+            display: block;
+            margin-top: 1rem;
+            background: transparent;
+            border: 2px solid var(--text-color-2);
+            font-size: 1rem;
+
+            &.invalid {
+                border-color: var(--error-color)
+            }
+        }
+
+    }
+
+    button {
+        margin-top: 2rem;
+        background: transparent;
+        border: 1px solid vars.$accent;
+        color: vars.$accent;
+
+        &:hover {
+            border: 1px solid vars.$accent; // overriding a global style
+        }
+    }
+
+    .error {
+        max-width: max-content;
+        font-size: small;
+        margin-top: 1rem;
+        color: var(--error-color);
+    }
+}

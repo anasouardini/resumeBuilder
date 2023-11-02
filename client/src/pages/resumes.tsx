@@ -15,12 +15,6 @@ const Resumes = () => {
 	const deleteResume = (e, targetResumeID) => {
 		dispatch(actions.deleteResume(targetResumeID));
 	}
-	const updateResume = (e, targetResume) => {
-		let newResume = structuredClone(targetResume);
-		newResume.title = 'test title, was set by redux async thunk';
-		// console.log(newResume)
-		dispatch(actions.updateResume(newResume));
-	}
 	const cloneResume = (e, targetResume) => {
 		let newResume = structuredClone(targetResume);
 		newResume.id = uuid();

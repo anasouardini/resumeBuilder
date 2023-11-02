@@ -1,10 +1,11 @@
 :root {
-  --error-color: rgb(203, 54, 54);
+  --error-color: rgb(224, 110, 110);
 
   --bg-color: #111;
   --bg-color-2: #181818;
   --bg-color-3: #1a1a1a;
   --text-color: #fff;
+  --text-color-2: #999;
   --link-color: #007BFF;
   --link-color-hover: #747bff;
   --btn-bg-color: #3a3a3a;
@@ -29,6 +30,7 @@ body[data-theme="light"] {
   --bg-color-2: #f9f9f9;
   --bg-color-3: #eee;
   --text-color: #213547;
+  --text-color-2: #192835;
   --link-color: #007BFF;
   --link-color-hover: #747bff;
   --btn-bg-color: #f9f9f9;
@@ -62,7 +64,7 @@ h1 {
   line-height: 1.1;
 }
 
-input{
+input {
   border: 2px solid var(--text-color);
   border-radius: 5px;
   padding: .3rem .7rem;
@@ -79,17 +81,23 @@ button {
   background-color: var(--btn-bg-color);
   cursor: pointer;
   transition: border-color 0.25s;
-}
 
-button:hover {
-  // border-color: var(--btn-border-color-hover);
-  border-color: transparent;
-}
+  &:hover {
+    // border-color: var(--btn-border-color-hover);
+    border-color: transparent;
+  }
 
-button:focus,
-button:focus-visible {
-  border-color: transparent !important;
-  outline: 2px solid var(--btn-outline-color-focus);
+  &:focus,
+  &:focus-visible {
+    border-color: transparent !important;
+    outline: 2px solid var(--btn-outline-color-focus);
+  }
+
+  &:disabled {
+    opacity: .5;
+    // color: #555;
+    // border: 1px solid #555;
+  }
 }
 
 .container {
@@ -99,7 +107,7 @@ button:focus-visible {
 }
 
 @media (max-width: 370px) {
-  .container{
+  .container {
     width: 90%
   }
 }
