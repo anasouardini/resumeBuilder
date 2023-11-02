@@ -47,19 +47,21 @@
   }
 }
 
-button[data-modal-show],
-button[data-modal-close] {
+button[data-header-modal-show],
+button[data-header-modal-close] {
   border: none;
   background-color: transparent;
   color: vars.$accent;
 }
 
-button[data-modal-show] {
+button[data-header-modal-show] {
   display: none;
+  padding: 10px 0 0 10px;
 }
 
 .small-screen-menu {
   border: none;
+  border-radius: 5px;
   background-color: var(--bg-color-2);
   padding: 0.5rem 0.5rem;
 
@@ -118,7 +120,7 @@ button[data-modal-show] {
     display: none;
   }
 
-  button[data-modal-show] {
+  button[data-header-modal-show] {
     display: block;
   }
 }

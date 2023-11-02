@@ -4,21 +4,25 @@ main.editor {
   display: flex;
   justify-content: space-between;
 
-  button[data-modal-show] {
-    position: fixed;
-    top: 10px;
-    right: 10px;
+  button[data-form-modal-show],
+  button[data-form-modal-close] {
+    border: none;
+    background: transparent;
+    padding: 0;
+    color: vars.$accent;
   }
-  dialog {
-    background: var(--bg-color);
-    &::backdrop {
-      background-color: rgba(10, 10, 10, 0.5);
+  button[data-form-modal-show] {
+    position: fixed;
+    z-index: 99;
+    top: 70px;
+    right: 10px;
+
+    @media (max-width: 400px) {
+      top: 10px;
     }
   }
-
   section[aria-label='output'] {
     flex-grow: 1;
-    margin-left: 2rem;
 
     div.resume-output {
       padding: 1rem 1rem 1rem 2rem;
@@ -48,6 +52,24 @@ main.editor {
         &:hover {
           border-color: var(--text-color-2);
         }
+      }
+    }
+  }
+
+  section[aria-label='editing form'] {
+    // margin-right: 2rem;
+    dialog {
+      //? todo: do this with tailwind
+      // & {
+      //   margin-right: 0;
+      // }
+      color: var(--text-color);
+      border: none;
+      background: var(--bg-color);
+      padding: 1.5rem 2rem;
+      border-radius: 5px;
+      &::backdrop {
+        background-color: rgba(5, 5, 10, 0.5);
       }
     }
   }
