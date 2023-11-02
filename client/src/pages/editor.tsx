@@ -10,6 +10,7 @@ import { RootState } from '../state/store';
 import { actions } from '../state/resumes/resumes';
 import CustomForm from '../components/shared/customForm';
 import DrawResume from '../components/shared/drawResume';
+import { resumeFormSchem } from '../types/formValidation';
 
 
 interface EditorProps { }
@@ -153,15 +154,7 @@ const Editor = ({ }: EditorProps) => {
         <CustomForm
           inputs={state.form.inputs}
           onSubmitCB={handleResumeComponentChange}
-          validationSchema={
-            yup.object().shape({
-              type: yup
-                .string()
-                .oneOf(['text', 'heading', 'list'])//todo: dynamically, get list of existing types
-                .required("Type is required!"),
-                spacing: yup.number().min(1).max(4).required("Spacing is required!"),
-            })
-          }
+          validationSchema={resumeFormSchem}
         />
       </section>
       <section aria-label='output'>
