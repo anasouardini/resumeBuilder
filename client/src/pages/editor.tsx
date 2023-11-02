@@ -134,6 +134,10 @@ const Editor = ({}: EditorProps) => {
       // console.log('handle edit', targetComponent, input.name)
       return { ...input, value: targetComponent[input.name] }
     })
+    // if modal is loaded in the DOM, show the modal.
+    if (formModalRef.current) {
+      formModalRef.current.showModal()
+    }
     // console.log(newState.form.inputs);
     setState(newState)
   }
@@ -156,24 +160,24 @@ const Editor = ({}: EditorProps) => {
   return (
     <main className='container editor'>
       <section aria-label='editing form'>
-        {window.screen.width < 400 ? (
+        {window.screen.width < 700 ? (
           <>
             <button
-              data-modal-show
+              data-form-modal-show
               onClick={() => {
                 formModalRef.current?.showModal()
               }}
             >
-              <PenBox />
+              <PenBox size={30} />
             </button>
-            <dialog ref={formModalRef} data-modal>
+            <dialog ref={formModalRef} data-form-modal>
               <button
-                data-modal-close
+                data-form-modal-close
                 onClick={() => {
                   formModalRef.current?.close()
                 }}
               >
-                <X />
+                <X size={35} />
               </button>
               <CustomForm
                 inputs={state.form.inputs}

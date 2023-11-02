@@ -52,16 +52,16 @@ const Header = () => {
         </nav>
       </header>
       <button
-        data-modal-show
+        data-header-modal-show
         onClick={() => {
           menuModalRef.current?.showModal()
         }}
       >
         <MenuIcon size={30} />
       </button>
-      <dialog ref={menuModalRef} data-modal className='small-screen-menu'>
+      <dialog ref={menuModalRef} data-header-modal className='small-screen-menu'>
         <button
-          data-modal-close
+          data-header-modal-close
           onClick={() => {
             menuModalRef.current?.close()
           }}
