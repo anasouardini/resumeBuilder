@@ -7,7 +7,6 @@
     - [X] store resumes data
 - [X] custom hooks
     - [X] get data from server
-    - [ ] reusable form
 - [ ] react-formik (form, reusability, sanitization)
     - [ ] zod
 - [X] react-router (resumes, editor, template)
