@@ -46,6 +46,7 @@ export default function CustomForm({
                       list={
                         input.type === 'list' ? `dataList-${input.name}` : ''
                       }
+                      type={input.type}
                       name={input.name}
                       placeholder={input.placeholder}
                       className={
