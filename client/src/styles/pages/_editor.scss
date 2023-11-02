@@ -8,10 +8,20 @@ main.editor {
         flex-grow: 1;
         margin-left: 2rem;
 
-        div {
-            padding: 1rem;
+        div.resume-output {
+            padding: 1rem 1rem 1rem 2rem;
             border: 1px solid var(--text-color-2);
             border-radius: 6px;
+
+            .component {
+                position: relative;
+                display: flex;
+
+                .content {
+                    border: 1px dashed var(--text-color-2);
+                    flex-grow: 1;
+                }
+            }
         }
 
         h1 {
@@ -23,7 +33,7 @@ main.editor {
                 margin-bottom: 1rem;
                 background-color: transparent;
 
-                &:hover{
+                &:hover {
                     border-color: var(--text-color-2);
                 }
             }

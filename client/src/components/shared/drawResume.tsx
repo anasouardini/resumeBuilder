@@ -9,7 +9,7 @@ interface DrawResumeProps {
 }
 const DrawResume = ({ resume, editable, editCB }: DrawResumeProps) => {
     return (
-        <div>
+        <div className='resume-output'>
             {resume.components.map((component) => {
 
                 const EditButton = () => {
@@ -19,6 +19,11 @@ const DrawResume = ({ resume, editable, editCB }: DrawResumeProps) => {
                                 key={component.order}
                                 onClick={(e) => editCB(component.name)}
                                 style={{
+                                    position: 'absolute',
+                                    content: "",
+                                    left: "-1.6rem",
+                                    top: "50%",
+                                    translate: "0 -50%",
                                     color: '#d4470f',
                                     width: 'auto',
                                     height: 'auto',
@@ -27,48 +32,60 @@ const DrawResume = ({ resume, editable, editCB }: DrawResumeProps) => {
                                     border: 'none',
                                     background: 'transparent',
                                 }}
-                            ><Pen size={15} /></button>
+                            ><Pen size={19} /></button>
                             : <></>
                     }</>
                 }
 
                 switch (component.type) {
                     case 'heading': {
-                        return <>
+                        return <div
+                            className='component'
+                        >
                             <EditButton />
                             <h2
                                 key={component.order}
+                                className='content'
                                 style={{
                                     color: component.color,
-                                    padding: `${component.spacing}rem 0`
+                                    margin: `${component.spacing}rem 0`,
+                                    padding: '.5rem'
                                 }}
                                 data-name={component.name}
                             >
                                 {component.value}
-                            </h2></>
+                            </h2></div>
                     }
                     case 'text': {
-                        return <>
+                        return <div
+                            className='component'
+                        >
                             <EditButton />
                             <p
+                                className='content'
                                 key={component.order}
                                 style={{
                                     color: component.color,
-                                    padding: `${component.spacing}rem 0`
+                                    margin: `${component.spacing}rem 0`,
+                                    padding: '.5rem'
                                 }}
                                 data-name={component.name}
                             >
                                 {component.value}
-                            </p></>
+                            </p></div>
                     }
                     case 'list': {
-                        return <>
+                        return <div
+                            className='component'
+                        >
                             <EditButton />
                             <ul
+                                className='content'
                                 key={component.order}
                                 style={{
                                     color: component.color,
-                                    padding: `${component.spacing}rem 0`
+                                    margin: `${component.spacing}rem 0`,
+                                    padding: '.5rem'
                                 }}
                                 data-name={component.name}
                             >
@@ -83,17 +100,18 @@ const DrawResume = ({ resume, editable, editCB }: DrawResumeProps) => {
                                         {listItem.value}
                                     </li>
                                 })}
-                            </ul></>
+                            </ul></div>
                     }
                     default: {
-                        return <>
-                            <EditButton />
+                        return <div
+                            className='resume-component-output'
+                        >
                             <p
                                 key={component.type}
                             >
                                 Component with type {component.type} is not supported.
                             </p>
-                        </>;
+                        </div>;
                     }
                 }
             })}
