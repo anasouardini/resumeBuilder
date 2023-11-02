@@ -6,7 +6,7 @@
   --bg-color-3: #1a1a1a;
   --text-color: #fff;
   --text-color-2: #999;
-  --link-color: #007BFF;
+  --link-color: #007bff;
   --link-color-hover: #747bff;
   --btn-bg-color: #3a3a3a;
   --btn-border-color-hover: #324275;
@@ -25,13 +25,13 @@
   -webkit-text-size-adjust: 100%;
 }
 
-body[data-theme="light"] {
+body[data-theme='light'] {
   --bg-color: #fff;
   --bg-color-2: #f9f9f9;
   --bg-color-3: #eee;
   --text-color: #213547;
   --text-color-2: #192835;
-  --link-color: #007BFF;
+  --link-color: #007bff;
   --link-color-hover: #747bff;
   --btn-bg-color: #f9f9f9;
   --btn-border-color-hover: #5872ca;
@@ -67,7 +67,7 @@ h1 {
 input {
   border: 2px solid var(--text-color);
   border-radius: 5px;
-  padding: .3rem .7rem;
+  padding: 0.3rem 0.7rem;
   color: var(--text-color);
 }
 
@@ -94,7 +94,7 @@ button {
   }
 
   &:disabled {
-    opacity: .5;
+    opacity: 0.5;
     // color: #555;
     // border: 1px solid #555;
   }
@@ -108,7 +108,7 @@ button {
 
 @media (max-width: 370px) {
   .container {
-    width: 90%
+    width: 90%;
   }
 }
 

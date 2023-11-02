@@ -1,15 +1,16 @@
 ## target stack/features
-- [X] sass
-    - [X] animations
-    - [X] responsiveness
-- [X] redux
-    - [X] theming
-    - [X] store resumes data
-- [X] custom hooks
-    - [X] get data from server
-- [X] react-formik (form, reusability, sanitization)
-    - [x] yup
-- [X] react-router (resumes, editor, template)
 
-- [X] lucide-react (icons)
-- [X] tooltips (icons)
+- [x] sass
+  - [x] animations
+  - [x] responsiveness
+- [x] redux
+  - [x] theming
+  - [x] store resumes data
+- [x] custom hooks
+  - [x] get data from server
+- [x] react-formik (form, reusability, sanitization)
+  - [x] yup
+- [x] react-router (resumes, editor, template)
+
+- [x] lucide-react (icons)
+- [x] tooltips (icons)
