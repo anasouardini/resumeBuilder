@@ -47,4 +47,5 @@ packages with `npm` is not harmful if you know what you're doing.
 
 ## Scaffold of the app
 
-![scaffold](https://github.com/anasouardini/resumeBuilder/assets/114059811/6e3a272d-2643-47da-8960-3abe503e2f51)
+![plan](https://github.com/anasouardini/resumeBuilder/assets/114059811/5c70b410-1469-4d73-8a91-261debfdd5ce)
+
