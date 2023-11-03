@@ -1,11 +1,11 @@
-import React from 'react'
-import { RootState } from '../../state/store'
-import { Pen } from 'lucide-react'
+import React from 'react';
+import { RootState } from '../../state/store';
+import { Pen, PlusCircle } from 'lucide-react';
 
 interface DrawResumeProps {
-  resume: RootState['resumes']['data'][0]
-  editable: boolean
-  editCB: (componentName: string) => void
+  resume: RootState['resumes']['data'][0];
+  editable: boolean;
+  editCB: (componentName: string) => void;
 }
 const DrawResume = ({ resume, editable, editCB }: DrawResumeProps) => {
   return (
@@ -39,8 +39,8 @@ const DrawResume = ({ resume, editable, editCB }: DrawResumeProps) => {
                 <></>
               )}
             </>
-          )
-        }
+          );
+        };
 
         switch (component.type) {
           case 'heading': {
@@ -60,7 +60,7 @@ const DrawResume = ({ resume, editable, editCB }: DrawResumeProps) => {
                   {component.value}
                 </h2>
               </div>
-            )
+            );
           }
           case 'text': {
             return (
@@ -79,7 +79,7 @@ const DrawResume = ({ resume, editable, editCB }: DrawResumeProps) => {
                   {component.value}
                 </p>
               </div>
-            )
+            );
           }
           case 'list': {
             return (
@@ -106,25 +106,33 @@ const DrawResume = ({ resume, editable, editCB }: DrawResumeProps) => {
                       >
                         {listItem.value}
                       </li>
-                    )
+                    );
                   })}
                 </ul>
               </div>
-            )
+            );
           }
           default: {
             return (
-              <div className='resume-component-output'>
+              <div className='component'>
                 <p key={component.type}>
                   Component with type {component.type} is not supported.
                 </p>
               </div>
-            )
+            );
           }
         }
       })}
-    </div>
-  )
-}
 
-export default DrawResume
+      {editCB ? (
+        <button className='add' onClick={e => editCB('new')}>
+          <PlusCircle />
+        </button>
+      ) : (
+        <></>
+      )}
+    </div>
+  );
+};
+
+export default DrawResume;

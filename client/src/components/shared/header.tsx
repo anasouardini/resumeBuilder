@@ -1,16 +1,16 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { Camera, Moon, MoonIcon, Sun, SunDim, X, MenuIcon } from 'lucide-react'
-import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../../state/store'
-import { actions } from '../../state/userPreferences/userPreferences'
-import { Tooltip } from 'react-tooltip'
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { Camera, Moon, MoonIcon, Sun, SunDim, X, MenuIcon } from 'lucide-react';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../state/store';
+import { actions } from '../../state/userPreferences/userPreferences';
+import { Tooltip } from 'react-tooltip';
 
 const Header = () => {
-  const userPreferences = useSelector((state: RootState) => state.theme)
-  const dispatch = useDispatch()
-  const changeTheme = () => dispatch(actions.toggleTheme())
-  const menuModalRef = React.useRef()
+  const userPreferences = useSelector((state: RootState) => state.theme);
+  const dispatch = useDispatch();
+  const changeTheme = () => dispatch(actions.toggleTheme());
+  const menuModalRef = React.useRef();
 
   return (
     <>
@@ -46,16 +46,20 @@ const Header = () => {
       <button
         data-header-modal-show
         onClick={() => {
-          menuModalRef.current?.showModal()
+          menuModalRef.current?.showModal();
         }}
       >
         <MenuIcon size={30} />
       </button>
-      <dialog ref={menuModalRef} data-header-modal className='small-screen-menu'>
+      <dialog
+        ref={menuModalRef}
+        data-header-modal
+        className='small-screen-menu'
+      >
         <button
           data-header-modal-close
           onClick={() => {
-            menuModalRef.current?.close()
+            menuModalRef.current?.close();
           }}
         >
           <X />
@@ -83,7 +87,7 @@ const Header = () => {
         </nav>
       </dialog>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -26,8 +26,8 @@ main.editor {
 
     div.resume-output {
       padding: 1rem 1rem 1rem 2rem;
-      border: 1px solid var(--text-color-2);
-      border-radius: 6px;
+      // border: 1px solid var(--text-color-2);
+      // border-radius: 6px;
 
       .component {
         position: relative;
@@ -36,6 +36,18 @@ main.editor {
         .content {
           border: 1px dashed var(--text-color-2);
           flex-grow: 1;
+        }
+      }
+      button.add {
+        width: 100%;
+        margin-top: 2rem;
+        padding-top: .5rem;
+        background: transparent;
+        border: 1px solid vars.$accent;
+        color: vars.$accent;
+
+        &:hover {
+          border: 1px solid vars.$accent; // overriding a global style
         }
       }
     }

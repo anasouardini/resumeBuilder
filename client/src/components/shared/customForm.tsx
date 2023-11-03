@@ -1,19 +1,20 @@
-import React from 'react'
-import { useFormik, Formik, Form, Field } from 'formik'
-import { Pen, PenBox } from 'lucide-react'
-import { toast } from 'react-toastify'
+import React from 'react';
+import { useFormik, Formik, Form, Field } from 'formik';
+import { Pen, PenBox } from 'lucide-react';
+import { toast } from 'react-toastify';
 
 interface CustomFormInputs {
-  inputs: Record<string, any>[]
-  onSubmitCB: () => void
-  validationSchema: {}
+  inputs: Record<string, any>[];
+  mode: 'edit' | 'create';
+  onSubmitCB: () => void;
+  validationSchema: {};
 }
 export default function CustomForm({
   inputs,
+  mode,
   onSubmitCB,
   validationSchema,
 }: CustomFormInputs) {
-  // console.log('form', inputs)
   return (
     <>
       <Formik
@@ -22,16 +23,16 @@ export default function CustomForm({
           // console.log({ values, actions })
           setTimeout(() => {
             // todo: only update the currentlty edited/created component
-            onSubmitCB(values)
-            toast.success('Resume was edited successfully')
-            actions.setSubmitting(false)
+            onSubmitCB(values, mode);
+            toast.success('Resume was edited successfully');
+            actions.setSubmitting(false);
             // actions.resetForm();
-          }, 1000)
+          }, 1000);
         }}
         initialValues={inputs.reduce((acc, input) => {
           // console.log('initial values', input.value)
-          acc[input.name] = input.value
-          return acc
+          acc[input.name] = input.value;
+          return acc;
         }, {})}
         validationSchema={validationSchema}
       >
@@ -60,7 +61,7 @@ export default function CustomForm({
                         {input.list?.map(optionValue => {
                           return (
                             <option value={optionValue} key={optionValue} />
-                          )
+                          );
                         })}
                       </datalist>
                     ) : (
@@ -75,12 +76,14 @@ export default function CustomForm({
                     <></>
                   )}
                 </>
-              )
+              );
             })}
-            <button disabled={isSubmitting}>Save</button>
+            <button disabled={isSubmitting}>
+              {mode == 'create' ? 'Add' : 'Save'}
+            </button>
           </Form>
         )}
       </Formik>
     </>
-  )
+  );
 }

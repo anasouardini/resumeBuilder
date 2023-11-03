@@ -1,4 +1,4 @@
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
 
 const server = {
   url: 'http://localhost:2000',
@@ -15,13 +15,13 @@ const server = {
       },
       cache: 'default',
       credentials: 'include',
-    }
+    };
 
-    if (body) options.body = JSON.stringify(body)
+    if (body) options.body = JSON.stringify(body);
 
-    return options
+    return options;
   },
-}
+};
 
 const methods = {
   post: (route: string, body?: {}) => {
@@ -30,9 +30,9 @@ const methods = {
         return {
           ...(await res.json().then(res => res)),
           status: res.status,
-        }
+        };
       })
-      .catch(() => false)
+      .catch(() => false);
   },
 
   read: (route: string) =>
@@ -44,7 +44,7 @@ const methods = {
             .then(res => res)
             .catch(() => false)),
           status: res.status,
-        }
+        };
       })
       .catch(err => err),
 
@@ -61,7 +61,7 @@ const methods = {
             .then(res => res)
             .catch(() => false)),
           status: res.status,
-        }
+        };
       })
       .catch(err => false),
 
@@ -75,9 +75,9 @@ const methods = {
             .then(res => res)
             .catch(() => false)),
           status: res.status,
-        }
+        };
       })
-      .catch(err => false)
+      .catch(err => false);
   },
 
   remove: (route: string, body?: {}) =>
@@ -89,10 +89,10 @@ const methods = {
             .then(res => res)
             .catch(() => false)),
           status: res.status,
-        }
+        };
       })
       .catch(err => false),
-}
+};
 
 const handleRequest = async (
   method: 'post' | 'read' | 'update' | 'updateFile' | 'remove',
@@ -100,23 +100,23 @@ const handleRequest = async (
   body?: {},
 ) => {
   if (route[0] == '/') {
-    route = route.slice(1)
+    route = route.slice(1);
   }
 
-  const response = await methods[method](route, body)
+  const response = await methods[method](route, body);
 
   try {
   } catch (err) {
-    toast.error(`client error while trying to make a request. route:${route}`)
-    return { err: 'connectionError', route }
+    toast.error(`client error while trying to make a request. route:${route}`);
+    return { err: 'connectionError', route };
   }
 
   if (response.status < 200 || response.status > 299) {
-    toast.error(`${response}. route: ${route}`)
-    return { err: 'serverError' }
+    toast.error(`${response}. route: ${route}`);
+    return { err: 'serverError' };
   }
 
-  return response
-}
+  return response;
+};
 
-export default handleRequest
+export default handleRequest;

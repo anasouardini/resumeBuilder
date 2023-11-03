@@ -1,27 +1,27 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { Trash, Copy, Eye, Pen, Pencil } from 'lucide-react'
-import { Tooltip } from 'react-tooltip'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { Trash, Copy, Eye, Pen, Pencil } from 'lucide-react';
+import { Tooltip } from 'react-tooltip';
 
-import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../state/store'
-import { actions } from '../state/resumes/resumes'
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../state/store';
+import { actions } from '../state/resumes/resumes';
 
-import { v4 as uuid } from 'uuid'
+import { v4 as uuid } from 'uuid';
 
 interface ResumeProps {}
 const Resumes = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const deleteResume = (e, targetResumeID) => {
-    dispatch(actions.deleteResume(targetResumeID))
-  }
+    dispatch(actions.deleteResume(targetResumeID));
+  };
   const cloneResume = (e, targetResume) => {
-    let newResume = structuredClone(targetResume)
-    newResume.id = uuid()
-    dispatch(actions.cloneResume(newResume))
-  }
+    let newResume = structuredClone(targetResume);
+    newResume.id = uuid();
+    dispatch(actions.cloneResume(newResume));
+  };
 
-  const resumes = useSelector((state: RootState) => state.resumes)
+  const resumes = useSelector((state: RootState) => state.resumes);
   //   console.log('resumes', resumes)
   return (
     <main className='container resumes-page'>
@@ -29,7 +29,7 @@ const Resumes = () => {
       <ul>
         {resumes.loaded ? (
           resumes.data.map(resume => {
-            const { title, id } = resume
+            const { title, id } = resume;
 
             return (
               <li key={id}>
@@ -68,14 +68,14 @@ const Resumes = () => {
                   <Tooltip id='delete' />
                 </div>
               </li>
-            )
+            );
           })
         ) : (
           <>Loading</>
         )}
       </ul>
     </main>
-  )
-}
+  );
+};
 
-export default Resumes
+export default Resumes;

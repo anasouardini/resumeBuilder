@@ -7,7 +7,7 @@
   "resumes": [
     {
       "id": "f8a3ce60-c0d3-446c-b284-a49032c6ab05",
-      "title": "modifed manually using the editor form",
+      "title": "My Basic Resume Template",
       "components": [
         {
           "name": "full name",
@@ -15,12 +15,20 @@
           "order": 1,
           "color": "#fff",
           "spacing": 2,
-          "value": "Name: linus torvald x"
+          "value": "Name: linus torvald"
+        },
+        {
+          "name": "skill level",
+          "type": "text",
+          "order": 3,
+          "color": "#fff",
+          "spacing": "1",
+          "value": "6"
         },
         {
           "name": "phone",
           "type": "text",
-          "order": 2,
+          "order": 3,
           "color": "#fff",
           "spacing": "1",
           "value": "Phone: ?? ?? ?? ?? ??"
@@ -32,6 +40,14 @@
           "color": "#fff",
           "spacing": "1",
           "value": "Age: 10"
+        },
+        {
+          "name": "test",
+          "type": "text",
+          "order": 5,
+          "color": "green",
+          "spacing": "1",
+          "value": "test"
         }
       ]
     },

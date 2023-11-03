@@ -1,4 +1,4 @@
-import * as yup from 'yup'
+import * as yup from 'yup';
 
 const resumeFormSchem = yup.object().shape({
   name: yup.string().required(),
@@ -10,5 +10,5 @@ const resumeFormSchem = yup.object().shape({
   color: yup.string().default('black'),
   spacing: yup.number().min(1).max(4).required('Spacing is required!'),
   value: yup.string().required(),
-})
-export { resumeFormSchem }
+});
+export { resumeFormSchem };
