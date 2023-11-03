@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom/client'
 
 import Layout from './components/shared/layout'
 import Resumes from './pages/resumes'
-import Template from './pages/template'
 import Editor from './pages/editor'
 import Preview from './pages/preview'
 
@@ -29,7 +28,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Route path='/resumes' element={<Resumes />} />
             <Route path='/preview/:resumeID' element={<Preview />} />
             <Route path='/editor/:resumeID' element={<Editor />} />
-            <Route path='/template' element={<Template />} />
           </Route>
         </Routes>
       </BrowserRouter>

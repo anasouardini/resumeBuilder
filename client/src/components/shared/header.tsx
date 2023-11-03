@@ -19,14 +19,6 @@ const Header = () => {
           <ul>
             <li>
               <NavLink
-                to='/template'
-                className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-                template
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
                 to='/resumes'
                 className={({ isActive }) => (isActive ? 'active' : '')}
               >
@@ -70,14 +62,6 @@ const Header = () => {
         </button>
         <nav>
           <ul>
-            <li>
-              <NavLink
-                to='/template'
-                className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-                template
-              </NavLink>
-            </li>
             <li>
               <NavLink
                 to='/resumes'

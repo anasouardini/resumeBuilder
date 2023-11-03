@@ -14,7 +14,7 @@
           "type": "text",
           "order": 1,
           "color": "#fff",
-          "spacing": "3",
+          "spacing": 2,
           "value": "Name: linus torvald x"
         },
         {
